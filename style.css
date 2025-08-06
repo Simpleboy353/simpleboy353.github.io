@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  background: rgba(22, 27, 34, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+/* Logo */
+.navbar .logo {
+  color: #58a6ff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  position: relative;
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline animation */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #58a6ff;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #58a6ff;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Active link style */
+.navbar a.active {
+  color: #58a6ff;
+}
+
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 8rem 5%;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.highlight {
+  color: #58a6ff;
+}
+
+.hero h2 {
+  color: #8b949e;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn {
+  background: #58a6ff;
+  padding: 0.7rem 1.5rem;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1f6feb;
+  transform: scale(1.05);
+}
+
+/* Sections */
+section {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.section-title {
+  color: #58a6ff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 per row on desktop */
+  gap: 2rem;
+}
+
+.skills-grid div {
+  width: 100%;
+  /* Equal width inside each grid cell */
+  height: 150px;
+  /* Fixed height for all cards */
+  border-radius: 10px;
+  background: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.skills-grid div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3);
+}
+
+/* Icon size */
+.skills-grid i {
+  font-size: 50px;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile: 3 per row */
+@media (max-width: 500px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills-grid i {
+  font-size: 50px;
+  margin-bottom: 0.5rem;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Desktop */
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  /* Center text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center content horizontally */
+  justify-content: center;
+  /* Center content vertically */
+  min-height: 220px;
+  /* Uniform height */
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  /* Lift + Slight growth */
+  box-shadow: 0 4px 25px rgba(88, 166, 255, 0.4);
+  /* Glow */
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 500px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card h3 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #c9d1d9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #58a6ff;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-btn i {
+  font-size: 1.3rem;
+}
+
+/* Button Colors */
+.contact-btn.email {
+  background: #EA4335;
+  /* Gmail red */
+}
+
+.contact-btn.linkedin {
+  background: #0A66C2;
+  /* LinkedIn blue */
+}
+
+.contact-btn.discord {
+  background: #5865F2;
+  /* Discord blurple */
+}
+
+.contact-btn.github {
+  background: #24292e;
+  /* GitHub dark */
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
+}
+
+/* Footer */
+footer {
+  background: #161b22;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
